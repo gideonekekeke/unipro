@@ -25,12 +25,16 @@ const HeaderComponent = () => {
 
 				<Wrapper>
 					<a>
-						<AiFillHome style={{ fontSize: "19px" }} />
-						<span>Home</span>
+						<Link to="/" style={{color:"white", textDecoration:"none"}}>
+							<AiFillHome style={{ fontSize: "19px" }} />
+							<span>Home</span>
+						</Link>
 					</a>
 					<a>
-						<FaSwatchbook style={{ fontSize: "19px" }} />
-						<span>About</span>
+						<Link to="/about" style={{color:"white", textDecoration:"none"}}>
+							<FaSwatchbook style={{ fontSize: "19px" }} />
+							<span>About</span>
+						</Link>
 					</a>
 					<a>
 						<MdSchool style={{ fontSize: "19px" }} />
@@ -57,13 +61,17 @@ const HeaderComponent = () => {
 								<span>School</span>
 							</Logo>
 							<a>
-								<AiFillHome style={{ fontSize: "19px" }} />
-								<span>Home</span>
+								<Link to="/" style={{color:"white", textDecoration:"none"}}>
+									<AiFillHome style={{ fontSize: "19px" }} />
+									<span>Home</span>
+								</Link>
 							</a>
 
 							<a>
-								<FaSwatchbook style={{ fontSize: "19px" }} />
-								<span>About</span>
+								<Link to="/about" style={{color:"white", textDecoration:"none"}}>
+									<FaSwatchbook style={{ fontSize: "19px" }} />
+									<span>About</span>
+								</Link>
 							</a>
 							<a>
 								<MdSchool style={{ fontSize: "19px" }} />
@@ -198,6 +206,8 @@ const Container = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	position: fixed;
+	z-index: 1;
 
 	@media screen and (max-width: 768px) {
 		display: flex;
