@@ -5,6 +5,7 @@ import pix2 from "./ImageFile/2.jpg"
 import pix3 from "./ImageFile/3.jpg"
 import pix4 from "./ImageFile/4.jpg"
 import pix5 from "./ImageFile/5.jpg"
+import pix6 from "./ImageFile/6.jpeg"
 
 
 
@@ -14,7 +15,7 @@ const AreaStudy = () => {
             <Content>
                 <FirstText>
                     <Line/>
-                    <Text>Area of Study</Text>
+                        <Text>Area of Study</Text>
                     <Line/>
 
                 </FirstText>
@@ -22,9 +23,8 @@ const AreaStudy = () => {
 
                 <BoxHolder>
                     <Box>
-                        <Image src={pix1}/>
+                        <Image src={pix6}/>
                         <Text2>Arts, Media & <br/> communication</Text2>
-
                     </Box>
                     <Box>
                     <Image src={pix1}/>
@@ -86,7 +86,7 @@ margin-top: 20px;
 }
 
 @media screen and (max-width: 425px){
-    margin-top: -80px;
+    margin-top: -130px;
 }
 `
 

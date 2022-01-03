@@ -44,7 +44,7 @@ const WhyContent = Styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 0.9;
+    opacity: 0.8;
 `
 
 
@@ -76,7 +76,7 @@ const Text = Styled.div`
 `
 
 const ButtonStyle = Styled.div`
-    height: 35px;
+    height: 43px;
     background-color: white;
     width: 270px;
     color: #D7192B;

@@ -120,12 +120,16 @@ text-transform: capitalize;
 font-size: 20px;
 font-weight: bold;
 }
+
+@media screen and (max-width: 430px) {
+    margin-top: -60px
+}
 `
 
 const OtherText = styled.div`
 margin-top: 20px;
 
-@media screen and (max-width:768px){
+@media screen and (max-width: 768px){
 
 text-transform: capitalize;
 margin-bottom: 10px;
@@ -134,4 +138,6 @@ width:300px;
 margin-top: 10px;
 text-align: center;
 }
+
+
 `
