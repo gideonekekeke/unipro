@@ -116,6 +116,7 @@ const Container = styled.div`
 	height: 400px;
 	overflow: hidden;
 	margin-bottom: 120px;
+	padding-top: 45px;
 
 	@media screen and (max-width: 425px){
 	margin-bottom: 10px;
