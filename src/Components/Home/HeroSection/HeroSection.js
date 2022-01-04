@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -89,6 +89,7 @@ const TextHold = styled.div`
 		width: 500px;
 		margin: 0;
 		margin-top: -20px;
+		font-weight: bold;
 	}
 
 	@media screen and (max-width: 600px) {
@@ -100,7 +101,6 @@ const TextHold = styled.div`
 			font-size: 12px;
 			width: 300px;
 			margin-top: 1px;
-			font-weight: lighter;
 		}
 
 		h2 {
