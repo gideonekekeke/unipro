@@ -13,7 +13,11 @@ const QuickStart = () => {
                 <TextHolder>
                     <Tittle>Know Facts About us </Tittle>
                     <OtherText>
-                    Have you ever read a webpage or document that used this text without paying much attention to it? The lorem ipsum is a placeholder text used in publishing and graphic design. This filler text is a short paragraph that contains all the letters of the alphabet. The characters are spread out evenly so that the reader’s attention is focused on the layout of the text instead of its content. Many software programs and applications have made it their default dummy text. Since the lorem ipsum is always used as a placeholder text, its use indicates that this is not a final version of a document, thus helping to avoid unnecessary printing.The lorem ipsum gets its name from the Latin phrase Neque porro quisquam est qui dolorem ipsum quia dolor sit amet. which translates
+                        The Great Shepherd University provides the opportunity for interactive activities with students of affiliated Universities in Africa and other parts of the world.
+                        We are focused on creating genuine graduates equipped with distinctive academic and professional competencies .
+                        <br />
+                        <br />
+                        The Great Shepherd University (ESEP-LE BENIN) PORTO NOVO Republic of Benin is a private institution established by Law. It has an operational license given by the government of Benin Republic and has graduated several sets since its establishment in 1999. The University is therefore calling for application from suitably qualified candidates for admission into Diploma, Degree and Postgraduate Degrees.
                     </OtherText>
                 </TextHolder>
 
@@ -26,118 +30,107 @@ const QuickStart = () => {
 export default QuickStart
 
 const Container = styled.div`
-height: 500px;
-width: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
-font-family: poppins;
-margin-top: 40px;
+    // height: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+    margin-top: 40px;
 
-@media screen and (max-width:768px){
-height: 800px;
-width: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
-font-family: poppins;
-
+    @media screen and (max-width:768px){
+    height: 800px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
 }
 `
 
 const Content = styled.div`
-height: 500px;
-width: 80%;
-display: flex;
-justify-content: space-around;
-margin-top: 20px;
-@media screen and (max-width:768px){
-height: 800px;
-width: 90vw;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-
-}
-
+    // height: 500px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    @media screen and (max-width: 650px){
+        width: 100%;
+    }
 `
 
 const ImaheHolder = styled.div`
-width:500px;
-height: 400px;
+    width:500px;
+    height: 400px;
+    margin: 30px;
 
-@media screen and (max-width: 425px){
+    @media screen and (max-width: 780px){
+        width: 400px;
+    }
 
-width:95%;
-height: 300px;
-display: flex;
-justify-content: center;
-}
-
-
+    @media screen and (max-width: 425px){
+        width:95%;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        margin-top: -180px;
+    }
 `
 const Image = styled.img`
-width:500px;
-height: 400px;
-object-fit: cover;
+    width:500px;
+    height: 400px;
+    object-fit: cover;
 
-@media screen and (max-width:425px){
+    @media screen and (max-width: 780px){
+        width:100%;
+    }
 
-width:100%;
-height: 200px;
-object-fit: cover;
-
-
-}
-
+    @media screen and (max-width:425px){
+    width:100%;
+    height: 200px;
+    object-fit: cover;
+    }
 `
 
 const TextHolder = styled.div`
-margin-top: 20px;
-flex-direction: column;
-align-items: center;
-width:500px;
-height: 400px;
-line-height: 1.5rem;
-text-align: start;
-display: flex;
+    margin: 30px;
+    flex-direction: column;
+    align-items: center;
+    width:500px;
+    height: auto;
+    line-height: 1.5rem;
+    text-align: start;
+    display: flex;
 
-@media screen and (max-width:768px){
-margin-top: -15px;
-margin-bottom: 20px;
-width:250px;
-height: 500px;
-}
+    @media screen and (max-width: 425px){
+        width: 95%;
+        margin-top: -100px
+
+    }
 `
 const Tittle = styled.div`
-text-transform: capitalize;
-font-size: 30px;
-font-weight: bold;
-@media screen and (max-width:768px){
-
-text-transform: capitalize;
-font-size: 20px;
-font-weight: bold;
-}
-
-@media screen and (max-width: 430px) {
-    margin-top: -60px
-}
+    text-transform: capitalize;
+    font-size: 30px;
+    font-weight: bold;
+    @media screen and (max-width:768px){
+    font-size: 20px;
+    }
 `
 
 const OtherText = styled.div`
-margin-top: 20px;
+    margin-top: 20px;
 
-@media screen and (max-width: 768px){
+    @media screen and (max-width: 768px){
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    font-size: 12px;
+    width: 90%;
+    margin-top: 10px;
+    text-align: center;
+    }
 
-text-transform: capitalize;
-margin-bottom: 10px;
-font-size: 12px;
-width:300px;
-margin-top: 10px;
-text-align: center;
-}
-
-
+    @media screen and (max-width: 430px) {
+        width: 95%;
+    }
 `

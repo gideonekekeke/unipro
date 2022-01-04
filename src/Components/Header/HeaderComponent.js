@@ -207,7 +207,7 @@ const Container = styled.div`
 	align-items: center;
 	justify-content: space-between;
 	position: fixed;
-	z-index: 1;
+	z-index: 2;
 
 	@media screen and (max-width: 768px) {
 		display: flex;

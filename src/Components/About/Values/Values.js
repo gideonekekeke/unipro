@@ -21,11 +21,11 @@ function Values() {
                     </Text>
                 </VisionWrapper>
                 <ImgWrapper>
-                    <Holder><HolderWrap>Capacity Building</HolderWrap></Holder>
-                    <Holder1><HolderWrap>Integrity</HolderWrap></Holder1>
-                    <Holder2><HolderWrap>Responsibility</HolderWrap></Holder2>
-                    <Holder3><HolderWrap>Hardwork</HolderWrap></Holder3>
-                    <Holder4><HolderWrap>Possibility</HolderWrap></Holder4>
+                    <Holder><HolderWrap>Integrity</HolderWrap></Holder>
+                    <Holder1><HolderWrap>Transparency</HolderWrap></Holder1>
+                    <Holder2><HolderWrap>Accountability</HolderWrap></Holder2>
+                    <Holder3><HolderWrap>Moral Rectitude</HolderWrap></Holder3>
+                    <Holder4><HolderWrap>Freedom of Communication</HolderWrap></Holder4>
                 </ImgWrapper>
             </VisionContain>
         </>
@@ -153,4 +153,5 @@ const HolderWrap = Styled.div`
     font-weight: bold;
     color: white;
     opacity: 0.8;
+    text-align: center;
 `

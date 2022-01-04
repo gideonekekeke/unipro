@@ -17,12 +17,11 @@ function Learn() {
            color="#fffeff" 
            flexdirection="column"  
            imgpath={pix}
-           text="Fleable Teaching Structure"
-           con=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-           molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-           numquam blanditiis harum quisquam eius sed
-           molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-           numquam blanditiis harum quisquam eius sed "
+           text="Flexible Teaching Structure"
+           con="
+                Students expectations and aspirations are readily met on time record
+           
+              "
            />
           <Card 
           background="" 
@@ -31,11 +30,10 @@ function Learn() {
           flexdirection="column-reverse;" 
           imgpath={pix2}
           text="Learning made easy"
-          con=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-          molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-          numquam blanditiis harum quisquam eius sed
-          molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-          numquam blanditiis harum quisquam eius sed "
+          con="
+                Focused on the total transformation of human capacity using qualified
+                team of staff and modern technological devices
+              "
           />
           <Card 
           background="#ef9f26" 

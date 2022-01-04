@@ -12,7 +12,8 @@ function Vision() {
                         OUR VISION
                     </Title>
                     <Text>
-                    it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 
+                        The Vision of Great Shepherd University is to remain a reference institution of higher learning focused on creating
+                        genuine graduates with distinctive academic and professional competencies.
                     </Text>
                 </VisionWrapper>
             </VisionContain>
@@ -55,6 +56,7 @@ const Title = Styled.div`
 
 const Text = Styled.div`
     line-height: 1.5;
+    font-weight: bold;
 `
 
 

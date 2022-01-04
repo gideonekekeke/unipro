@@ -4,6 +4,7 @@ import HeroSection from '../Home/HeroSection/HeroSection'
 import Allcom from '../Home/LearningComp/MyOwn/Allcom'
 import QuickStart from '../Home/InterestComp/QuickStart'
 import AreaStudy from '../Home/InterestComp/AreaStudy'
+import GalleryFlip from '../Home/Gallery/GaleryFlip'
 
 
 
@@ -15,6 +16,7 @@ function Home() {
             <QuickStart />
             <AreaStudy />
             <Facts />
+            <GalleryFlip />
             
         </>
     )
