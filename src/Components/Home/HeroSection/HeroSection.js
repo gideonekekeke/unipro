@@ -34,15 +34,16 @@ const HeroSection = () => {
 				</Mylider>
 			</Wrapper>
 			<TextHold>
-				<h2>Study at school and connect to the world</h2>
+				<h2>ESEP - GREAT SHEPHERD UNIVERSITY</h2>
 				<p>
-					There are many variations of passages of Lorem Ipsum available, but
-					the majority have suffered alteration in some form, by injected
-					humour, or randomised words which don't look even slightly believable.
-					If you are going to use a passage of Lorem Ipsum, you need to be sure
-					there isn't anything embarrassing hidden in the middle of text. All
-					the Lorem Ipsum generators on the Internet tend to repeat predefined
-					chunks as necessary
+					Approved and Accredited on the 18 October, 1999 by Decree 
+					No:0136/MENRS/CAB/DC/SP
+				</p>
+				<br />
+				<p>
+					At Great Shepherd/Le Berger, we organise TOEFL regularly to
+					enable students meet, study and understand immigration/employment
+					requirements in United States and Canada
 				</p>
 			</TextHold>
 		</Container>
@@ -66,7 +67,7 @@ const TextHold = styled.div`
 		font-size: 35px;
 		/* width: 100%; */
 		font-weight: bold;
-		width: 34.8ch;
+		width: 31.8ch;
 		animation: typing 10s steps(45, end), blink-caret 0.85s step-end infinite;
 		animation-iteration-count: infinite;
 		white-space: nowrap;

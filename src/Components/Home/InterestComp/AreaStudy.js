@@ -29,13 +29,13 @@ const AreaStudy = () => {
                     <Box>
                     <Image src={pix1}/>
 
-                    <Text2>Biological & LifeSciences</Text2>
+                    <Text2>Computer Science</Text2>
 
                     </Box>
                     <Box>
                     <Image src={pix2}/>
 
-                    <Text2>Business</Text2>
+                    <Text2>Economics, Banking & Finance</Text2>
 
                     </Box>
                 </BoxHolder>
@@ -43,14 +43,14 @@ const AreaStudy = () => {
                     <Box1>
                     <Image src={pix3}/>
 
-                    <Text2>Education</Text2>
+                    <Text2>Linguistics (French & English, Interpretation & Translation)</Text2>
 
 
                     </Box1>
                     <Box1 >
                     <Image src={pix4}/>
 
-                    <Text2>Humanities</Text2>
+                    <Text2>Transport & Logistics Management</Text2>
 
                     </Box1>
                     <Box1>
@@ -295,6 +295,8 @@ justify-content: center;
 align-items: center;
 text-transform: capitalize;
 color: white;
+text-align: center;
+
 @media screen and (max-width:768px){
     position: absolute;
 font-weight: bold;

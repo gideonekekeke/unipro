@@ -8,14 +8,13 @@ function Think() {
    <Container>
      <Wrapper>
        <Allcom>
-         <Title>Think you can change the world with degree? we do</Title>
+         <Title>Think you can change the world with a Degree?  We do!</Title>
          <Small></Small>
          <Contentt>
-         Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-numquam blanditiis harum quisquam eius sed
-molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-numquam blanditiis harum quisquam eius sed 
+            We focus on the total transformation of human capacity using qualified
+            team of staff and modern technological devices.
+            <br />
+            We are keen on meeting students expectations and aspirations on record time.
          </Contentt>
 
          <ButtonCon>
@@ -31,19 +30,20 @@ numquam blanditiis harum quisquam eius sed
 export default Think
 
 const ButtonCon = styled.div`
- height: 50px;
- width: 300px;
- background-color:#fffeff ;
- color: #fc1028;
- text-align: center;
- cursor: pointer;
-transform: scale(1);
-transition: all 350ms;
-display: flex;
-justify-content:center;
-align-items: center;
-border-radius: 5px;
-font-weight: 600;
+  height: 50px;
+  width: 300px;
+  background-color:#fffeff ;
+  color: #fc1028;
+  text-align: center;
+  cursor: pointer;
+  transform: scale(1);
+  transition: all 350ms;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  border-radius: 5px;
+  font-weight: 600;
+  margin-top: -20px;
 
 &:hover{
   transform:scale(1.03)
@@ -57,13 +57,12 @@ font-weight: 600;
 
 const Contentt = styled.div`
 color:#fffeff;
-height: 130px;
+height: 150px;
 width: 600px;
-
 text-align: center;
 font-size: 15px;
 
-@media screen and (max-width:425px){
+@media screen and (max-width:650px){
   width: 100%;
 }
 }
@@ -80,7 +79,7 @@ margin-bottom: 20px;
 
 const Title = styled.div`
 color:#fffeff;
-height: 110px;
+height: 120px;
 width: 600px;
 font-size:35px;
 text-align: center;

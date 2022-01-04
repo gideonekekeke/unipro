@@ -8,13 +8,12 @@ function Mission() {
           <VisionContain>
                 <VisionWrapper>
                     <Title>
-                        OUR MISSION
+                        OUR MISSION STATEMENT
                     </Title>
                     <Text>
-                    it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 
-                    </Text>
-                    <Text>
-                    it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 
+                        To receive students and provide access to knowledge through which cognitive, social and
+                        spiritual understanding are enhanced resulting in responsible personalities full of life
+                        and value to themselves and humanity.
                     </Text>
                 </VisionWrapper>
             </VisionContain> 
@@ -30,7 +29,7 @@ const VisionContain = Styled.div`
     width: 100%;
     background-color:  #FFD700;
     color: white;
-    height: 350px;
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,6 +59,10 @@ const Title = Styled.div`
     font-weight: bold;
     font-size: 25px;
     margin-bottom: 18px;
+
+    @media screen and (max-width: 430px){
+        font-size: 20px;
+    }
 `
 
 const Text = Styled.div`
