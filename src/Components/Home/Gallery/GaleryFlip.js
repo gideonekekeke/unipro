@@ -26,10 +26,9 @@ const GalleryFlip = () => {
 export default GalleryFlip;
 
 const Container = styled.div`
-width: 98%;
 display: flex;
 justify-content:center;
-align-items: center;
+p=align-items: center;
 background-color: #F4F4F4;
 margin-top: 20px;
 `
