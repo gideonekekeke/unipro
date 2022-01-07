@@ -44,8 +44,9 @@ const HeaderComponent = () => {
 						<MdContacts style={{ fontSize: "19px" }} />
 						<span>Contact</span>
 					</a>
-
-					<button>Student Portal</button>
+					<Link to="/signup" style={{color:"white", textDecoration:"none"}}>
+						<button>Student Portal</button>
+					</Link>
 				</Wrapper>
 				
 				{show ? <Menu2 onClick={handleShow} /> : <Menu onClick={handleShow} />}
@@ -85,7 +86,9 @@ const HeaderComponent = () => {
 								<MdContacts style={{ fontSize: "19px" }} />
 								<span>Contact</span>
 							</a>
-							<button>Student Portal</button>
+							<Link to="/signup" style={{color:"white", textDecoration:"none"}}>
+								<button>Student Portal</button>
+							</Link>
 						</SubMenu>
 					</MainSide>
 				</>
