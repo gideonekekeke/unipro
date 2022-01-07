@@ -44,22 +44,25 @@ const HeaderComponent = () => {
 						<MdContacts style={{ fontSize: "19px" }} />
 						<span>Contact</span>
 					</a>
-				</Wrapper>
 
+					<button>Student Portal</button>
+				</Wrapper>
+				
 				{show ? <Menu2 onClick={handleShow} /> : <Menu onClick={handleShow} />}
 			</Container>
 
 			{show ? (
 				<>
 					<MainSide>
+						<button >Student Portal</button>
 						<SubMenu
 							onClick={() => {
 								setShow(!show);
 							}}>
-							<Logo>
+							{/* <Logo>
 								<FaSchool style={{ fontSize: "19px" }} />
 								<span>School</span>
-							</Logo>
+							</Logo> */}
 							<a>
 								<Link to="/" style={{color:"white", textDecoration:"none"}}>
 									<AiFillHome style={{ fontSize: "19px" }} />
@@ -82,6 +85,7 @@ const HeaderComponent = () => {
 								<MdContacts style={{ fontSize: "19px" }} />
 								<span>Contact</span>
 							</a>
+							<button>Student Portal</button>
 						</SubMenu>
 					</MainSide>
 				</>
@@ -100,6 +104,7 @@ const MainSide = styled.div`
 	height: 100vh;
 	position: fixed;
 	top: 0;
+
 `;
 
 // const SubUser = styled.div`
@@ -126,6 +131,31 @@ const MainSide = styled.div`
 const SubMenu = styled.div`
 	display: none;
 	z-index: 1000;
+
+	button{
+		margin-left: 20px;
+		height: 35px;
+		width: 120px;
+		font-weight: bold;
+		border-radius: 5px;
+		border: none;
+		// transform: scaleX(1);
+		opacity: 1;
+		cursor: pointer;
+		font-size: 15px;
+		margin-top: 30px;
+	
+		:hover {
+			background-color: #1976D2;
+			color: white;
+			transform-origin: center left;
+			transition: all 350ms cubic-bezier(0.34, 0.44, 0.96, 0.47) 0s;
+			// transform: scaleX(0.9);
+			opacity: 0.8;
+		}
+	}
+	
+
 	@media screen and (max-width: 786px) {
 		width: 250px;
 		height: 100%;
@@ -209,6 +239,7 @@ const Container = styled.div`
 	position: fixed;
 	z-index: 2;
 
+
 	@media screen and (max-width: 768px) {
 		display: flex;
 		width: 100vw;
@@ -235,9 +266,29 @@ height: 100%;
 cursor: pointer;
 /* margin-left: 20px; */
 margin-right: 150px;
-
 color : white;
 
+button{
+	margin-left: 20px;
+	height: 35px;
+	width: 120px;
+	font-weight: bold;
+	border-radius: 5px;
+	border: none;
+	// transform: scaleX(1);
+	opacity: 1;
+	cursor: pointer;
+	font-size: 15px;
+
+	:hover {
+		background-color: #1976D2;
+		color: white;
+		transform-origin: center left;
+		transition: all 350ms cubic-bezier(0.34, 0.44, 0.96, 0.47) 0s;
+		// transform: scaleX(0.9);
+		opacity: 0.8;
+	}
+}
 
 a{
   display: flex;

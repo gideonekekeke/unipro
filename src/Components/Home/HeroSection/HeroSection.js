@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -34,14 +34,14 @@ const HeroSection = () => {
 				</Mylider>
 			</Wrapper>
 			<TextHold>
-				<h2>ESEP - GREAT SHEPHERD UNIVERSITY</h2>
+				<h2>GREAT SHEPHERD UNIVERSITY</h2>
 				<p>
 					Approved and Accredited on the 18 October, 1999 by Decree 
 					No:0136/MENRS/CAB/DC/SP
 				</p>
 				<br />
 				<p>
-					At Great Shepherd/Le Berger, we organise TOEFL regularly to
+					At Great Shepherd University, we organise TOEFL regularly to
 					enable students meet, study and understand immigration/employment
 					requirements in United States and Canada
 				</p>
@@ -67,7 +67,7 @@ const TextHold = styled.div`
 		font-size: 35px;
 		/* width: 100%; */
 		font-weight: bold;
-		width: 31.8ch;
+		width: 26.0ch;
 		animation: typing 10s steps(45, end), blink-caret 0.85s step-end infinite;
 		animation-iteration-count: infinite;
 		white-space: nowrap;
@@ -89,6 +89,7 @@ const TextHold = styled.div`
 		width: 500px;
 		margin: 0;
 		margin-top: -20px;
+		font-weight: bold;
 	}
 
 	@media screen and (max-width: 600px) {
@@ -100,12 +101,11 @@ const TextHold = styled.div`
 			font-size: 12px;
 			width: 300px;
 			margin-top: 1px;
-			font-weight: lighter;
 		}
 
 		h2 {
 			font-size: 17px;
-			width: 320px;
+			width: 258px;
 			/* width: 40.8ch; */
 			overflow: none;
 		}

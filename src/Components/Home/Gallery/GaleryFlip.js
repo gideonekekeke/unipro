@@ -26,10 +26,9 @@ const GalleryFlip = () => {
 export default GalleryFlip;
 
 const Container = styled.div`
-width: 100%;
 display: flex;
 justify-content:center;
-align-items: center;
+p=align-items: center;
 background-color: #F4F4F4;
 margin-top: 20px;
 `
@@ -75,6 +74,6 @@ border-radius: 8px;
 z-index: 1;
 
 @media screen and (max-width: 700px){
-    width: 100%;
+    width: 95%;
 }
 `
