@@ -18,7 +18,6 @@ function Admission() {
       <br />
       <br />
       <br />
-
       <Container>
         <Wrapper>
           <AdmissionComp/>

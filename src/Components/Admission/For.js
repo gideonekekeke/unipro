@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import img from "../MyOwn/Second/img/back.jpg"
+import img from "./img/back.jpg"
 import flag from "./img/flag1.png"
 import flag2 from "./img/flag2.jpg"
 import flag3 from "./img/flag3.png"
