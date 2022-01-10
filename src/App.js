@@ -5,6 +5,7 @@ import Footer from "./Components/Footer/Footer"
 import About from "./Components/About/About";
 import Signup from "./Components/StudentSign/Signup";
 import Admission from "./Components/Admission/Admission"
+import Contact from "./Components/Contact/Contact";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route path='/about' element={<About />} />
             <Route path='/signup' element={<Signup />} />
             <Route path='/admission' element={<Admission />} />
+            <Route path='/contact' element={<Contact />} />
           </Routes>
         <Footer />
       </Router>

@@ -37,12 +37,16 @@ const HeaderComponent = () => {
 						</Link>
 					</a>
 					<a>
-						<MdSchool style={{ fontSize: "19px" }} />
-						<span>Admission</span>
+						<Link to="/admission" style={{color:"white", textDecoration:"none"}}>
+							<MdSchool style={{ fontSize: "19px" }} />
+							<span>Admission</span>
+						</Link>
 					</a>
 					<a>
-						<MdContacts style={{ fontSize: "19px" }} />
-						<span>Contact</span>
+						<Link to="/contact" style={{color:"white", textDecoration:"none"}}>
+							<MdContacts style={{ fontSize: "19px" }} />
+							<span>Contact</span>
+						</Link>
 					</a>
 					<Link to="/signup" style={{color:"white", textDecoration:"none"}}>
 						<button>Student Portal</button>
@@ -78,13 +82,17 @@ const HeaderComponent = () => {
 								</Link>
 							</a>
 							<a>
-								<MdSchool style={{ fontSize: "19px" }} />
-								<span>Admission</span>
+								<Link to="/admission" style={{color:"white", textDecoration:"none"}}>
+									<MdSchool style={{ fontSize: "19px" }} />
+									<span>Admission</span>
+								</Link>
 							</a>
 
 							<a>
-								<MdContacts style={{ fontSize: "19px" }} />
-								<span>Contact</span>
+								<Link to="/contact" style={{color:"white", textDecoration:"none"}}>
+									<MdContacts style={{ fontSize: "19px" }} />
+									<span>Contact</span>
+								</Link>
 							</a>
 							<Link to="/signup" style={{color:"white", textDecoration:"none"}}>
 								<button>Student Portal</button>
