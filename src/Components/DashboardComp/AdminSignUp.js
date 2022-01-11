@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Styled from "styled-components";
-import Pic from "./Image/pix.png";
-import Pic2 from "./Image/stu.png";
+// import Pic from "./Image/pix.png";
+import Pic from "../StudentSign/Image/pix.png";
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -10,7 +10,7 @@ import { app } from "../../Base";
 import firebase from "firebase";
 import { FaUserCircle } from "react-icons/fa";
 
-function Signup() {
+function AdminSignUp() {
 	const [toggle, setToggle] = useState(true);
 
 	const ontouch = () => {
@@ -22,45 +22,15 @@ function Signup() {
 	const [sec, setSect] = React.useState("1eMinCv9skdifv68iEv2");
 	const [email, setEmail] = React.useState("");
 	const [password, setPassword] = React.useState("");
-	const [image, setImage] = React.useState(Pic2);
-	const [avatar, setAvatar] = React.useState("");
-	const [percent, setPercent] = React.useState(0.0000001);
+
 	const [errMess, setErrMess] = React.useState("");
 
 	const schema = yup.object().shape({
 		fullName: yup.string().required("this field is required"),
-		gender: yup.string().required("this field is required"),
-		regnumber: yup.number().required("this field is required"),
-		secretId: yup.string().required("this field is required"),
+
 		email: yup.string().email().required("this field is required"),
 		password: yup.string().required("this field is required"),
 	});
-
-	const onUploadImage = async (e) => {
-		const file = e.target.files[0];
-		const save = URL.createObjectURL(file);
-		setImage(save);
-
-		const fileRef = await app.storage().ref();
-		const storageRef = fileRef.child("avatar/" + file.name).put(file);
-
-		storageRef.on(
-			firebase.storage.TaskEvent.STATE_CHANGED,
-			(snapShot) => {
-				const counter = (snapShot.bytesTransferred / snapShot.totalBytes) * 100;
-
-				setPercent(counter);
-				console.log(counter);
-			},
-			(err) => console.log(err.message),
-			() => {
-				storageRef.snapshot.ref.getDownloadURL().then((URL) => {
-					setAvatar(URL);
-					console.log(URL);
-				});
-			},
-		);
-	};
 
 	const {
 		register,
@@ -72,34 +42,29 @@ function Signup() {
 	});
 
 	const uploadToFirebase = handleSubmit(async (val) => {
-		const { fullName, email, password, secretId, gender, regnumber } = val;
-		if (secretId !== sec) {
-			setErrMess("incorrect school id");
-		} else {
-			const newUser = await app
-				.auth()
-				.createUserWithEmailAndPassword(email, password);
+		const { fullName, email, password } = val;
 
-			if (newUser) {
-				await app.firestore().collection("students").doc(newUser.user.uid).set({
-					fullName,
-					email,
-					secretId,
-					gender,
-					password,
-					regnumber,
-					avatar,
-					createdBy: newUser.user.uid,
-				});
-				navigate("/studentDashboard");
-				reset();
-			}
+		const newUser = await app
+			.auth()
+			.createUserWithEmailAndPassword(email, password);
+
+		if (newUser) {
+			await app.firestore().collection("admin").doc(newUser.user.uid).set({
+				fullName,
+				email,
+
+				password,
+
+				createdBy: newUser.user.uid,
+			});
+			navigate("/adminDashboard");
+			reset();
 		}
 	});
 
 	const LoginUser = async () => {
 		await app.auth().signInWithEmailAndPassword(email, password);
-		navigate("/studentDashboard");
+		navigate("/adminDashboard");
 	};
 
 	const handleShow = () => {
@@ -115,49 +80,17 @@ function Signup() {
 			<MainConatiner>
 				{toggle ? (
 					<Wrapper1>
-						<LeftContain1>
-							<Pix src={Pic} />
-							<h2>Student Portal</h2>
-							<p>
-								Get access to your result from here, Enter your student id to
-								let us know you're a student. Don't have an id? see the school
-								admin to get an id for yourself
-							</p>
-						</LeftContain1>
+						<h3>Admin Page</h3>
 						<RightContain1>
-							<PrevImage src={image} />
-							<input
-								onChange={onUploadImage}
-								id='pix'
-								type='file'
-								style={{ height: "30px", border: "none", display: "none" }}
-								placeholder='Choose an image'
-							/>
-							<InputLabel htmlFor='pix'>Upload an Image</InputLabel>
 							<input {...register("fullName")} placeholder='Full name' />
-							<select {...register("gender")}>
-								<option disabled selected value='sele'>
-									Select your Gender
-								</option>
-								<option value='male'>Male</option>
-								<option value='female'>female</option>
-							</select>
+
 							<input {...register("email")} placeholder='Email address' />
-							<input {...register("regnumber")} placeholder='Reg.Number' />
 
 							<input
 								{...register("password")}
 								placeholder='Enter your password'
 							/>
-							<input
-								{...register("secretId")}
-								placeholder='Enter your school ID'
-							/>
-							{errMess ? (
-								<p style={{ color: "red", backgroun: "black" }}>{errMess}</p>
-							) : null}
 
-							<span style={{ color: "red" }}>{errors.secretId?.message}</span>
 							<button onClick={uploadToFirebase}>Submit</button>
 							<p style={{ display: "flex" }}>
 								Already have an account? Login in
@@ -176,15 +109,6 @@ function Signup() {
 					</Wrapper1>
 				) : (
 					<Wrapper2>
-						<LeftContain1>
-							<Pix src={Pic} />
-							<h2>Student Portal</h2>
-							<p>
-								Get access to your result from here, Enter your student id to
-								let us know you're a student. Don't have an id? see the school
-								admin to get an id for yourself
-							</p>
-						</LeftContain1>
 						<RightContainShort>
 							<input
 								onChange={(e) => {
@@ -225,7 +149,7 @@ function Signup() {
 	);
 }
 
-export default Signup;
+export default AdminSignUp;
 
 const PrevImage = Styled.img`
 height :100px;
@@ -261,9 +185,11 @@ const MainConatiner = Styled.div`
 const Wrapper1 = Styled.div`
     display: flex;
     flex-wrap: wrap;
-    margin-top: 100px;
+    /* margin-top: 100px; */
     margin-bottom: 80px;
     justify-content: center;
+	flex-direction: column;
+	align-items: center;
 
 
     @media screen and (max-width: 430px){
@@ -300,13 +226,13 @@ const Pix = Styled.img`
 
 const RightContain1 = Styled.div`
     width: 400px;
-  
+     height : 450px;
     background-color: white;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 150px;
+  
     border: none;
     justify-content: center;
 
@@ -381,9 +307,11 @@ const RightContain1 = Styled.div`
 const Wrapper2 = Styled.div`
 display: flex;
 flex-wrap: wrap;
-margin-top: 100px;
+/* margin-top: 100px; */
 margin-bottom: 80px;
 justify-content: center;
+align-items: center;
+flex-direction: column;
 
 @media screen and (max-width: 430px){
     margin-top: 10px;
@@ -400,7 +328,7 @@ border-radius: 10px;
 display: flex;
 flex-direction: column;
 align-items: center;
-margin-left: 150px;
+
 border: none;
 justify-content: center;
 margin-top: 80px;

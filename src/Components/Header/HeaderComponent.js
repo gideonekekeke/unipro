@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { CgMenu } from "react-icons/cg";
 import { ImCancelCircle } from "react-icons/im";
@@ -7,9 +7,14 @@ import { FaSwatchbook } from "react-icons/fa";
 import { FaSchool } from "react-icons/fa";
 import { MdSchool } from "react-icons/md";
 import { MdContacts } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { GoDashboard } from "react-icons/go";
+import { Link, useNavigate } from "react-router-dom";
+import { GlobalContext } from "../Global/GlobalContext";
+import { app } from "../../Base";
 
 const HeaderComponent = () => {
+	const navigate = useNavigate();
+	const { current, currentData, adminData } = useContext(GlobalContext);
 	const [show, setShow] = useState(false);
 	const handleShow = () => {
 		setShow(!show);
@@ -25,41 +30,76 @@ const HeaderComponent = () => {
 
 				<Wrapper>
 					<a>
-						<Link to="/" style={{color:"white", textDecoration:"none"}}>
+						<Link to='/' style={{ color: "white", textDecoration: "none" }}>
 							<AiFillHome style={{ fontSize: "19px" }} />
 							<span>Home</span>
 						</Link>
 					</a>
 					<a>
-						<Link to="/about" style={{color:"white", textDecoration:"none"}}>
+						<Link
+							to='/about'
+							style={{ color: "white", textDecoration: "none" }}>
 							<FaSwatchbook style={{ fontSize: "19px" }} />
 							<span>About</span>
 						</Link>
 					</a>
 					<a>
-						<Link to="/admission" style={{color:"white", textDecoration:"none"}}>
+						<Link
+							to='/admission'
+							style={{ color: "white", textDecoration: "none" }}>
 							<MdSchool style={{ fontSize: "19px" }} />
 							<span>Admission</span>
 						</Link>
 					</a>
 					<a>
-						<Link to="/contact" style={{color:"white", textDecoration:"none"}}>
+						<Link
+							to='/contact'
+							style={{ color: "white", textDecoration: "none" }}>
 							<MdContacts style={{ fontSize: "19px" }} />
 							<span>Contact</span>
 						</Link>
 					</a>
-					<Link to="/signup" style={{color:"white", textDecoration:"none"}}>
-						<button>Student Portal</button>
-					</Link>
+					{currentData ? (
+						<Link
+							to='/studentDashboard'
+							style={{ color: "white", textDecoration: "none" }}>
+							<GoDashboard style={{ fontSize: "19px" }} />
+							<span>Dashboard</span>
+						</Link>
+					) : null}
+					{adminData ? (
+						<Link
+							to='/adminDashboard'
+							style={{ color: "white", textDecoration: "none" }}>
+							<GoDashboard style={{ fontSize: "19px" }} />
+							<span>Upload Result</span>
+						</Link>
+					) : null}
+
+					{current ? (
+						<button
+							onClick={() => {
+								app.auth().signOut();
+								navigate("/");
+							}}>
+							Log out
+						</button>
+					) : (
+						<Link
+							to='/signup'
+							style={{ color: "white", textDecoration: "none" }}>
+							<button>Student Portal</button>
+						</Link>
+					)}
 				</Wrapper>
-				
+
 				{show ? <Menu2 onClick={handleShow} /> : <Menu onClick={handleShow} />}
 			</Container>
 
 			{show ? (
 				<>
 					<MainSide>
-						<button >Student Portal</button>
+						<button>Student Portal</button>
 						<SubMenu
 							onClick={() => {
 								setShow(!show);
@@ -69,34 +109,69 @@ const HeaderComponent = () => {
 								<span>School</span>
 							</Logo> */}
 							<a>
-								<Link to="/" style={{color:"white", textDecoration:"none"}}>
+								<Link to='/' style={{ color: "white", textDecoration: "none" }}>
 									<AiFillHome style={{ fontSize: "19px" }} />
 									<span>Home</span>
 								</Link>
 							</a>
 
 							<a>
-								<Link to="/about" style={{color:"white", textDecoration:"none"}}>
+								<Link
+									to='/about'
+									style={{ color: "white", textDecoration: "none" }}>
 									<FaSwatchbook style={{ fontSize: "19px" }} />
 									<span>About</span>
 								</Link>
 							</a>
 							<a>
-								<Link to="/admission" style={{color:"white", textDecoration:"none"}}>
+								<Link
+									to='/admission'
+									style={{ color: "white", textDecoration: "none" }}>
 									<MdSchool style={{ fontSize: "19px" }} />
 									<span>Admission</span>
 								</Link>
 							</a>
 
 							<a>
-								<Link to="/contact" style={{color:"white", textDecoration:"none"}}>
+								<Link
+									to='/contact'
+									style={{ color: "white", textDecoration: "none" }}>
 									<MdContacts style={{ fontSize: "19px" }} />
 									<span>Contact</span>
 								</Link>
 							</a>
-							<Link to="/signup" style={{color:"white", textDecoration:"none"}}>
-								<button>Student Portal</button>
-							</Link>
+							{currentData ? (
+								<Link
+									to='/studentDashboard'
+									style={{ color: "white", textDecoration: "none" }}>
+									<GoDashboard style={{ fontSize: "19px" }} />
+									<span>Dashboard</span>
+								</Link>
+							) : null}
+							{adminData ? (
+								<Link
+									to='/adminDashboard'
+									style={{ color: "white", textDecoration: "none" }}>
+									<GoDashboard style={{ fontSize: "19px" }} />
+									<span>Upload Result</span>
+								</Link>
+							) : null}
+
+							{current ? (
+								<button
+									onClick={() => {
+										app.auth().signOut();
+										navigate("/");
+									}}>
+									Log out
+								</button>
+							) : (
+								<Link
+									to='/signup'
+									style={{ color: "white", textDecoration: "none" }}>
+									<button>Student Portal</button>
+								</Link>
+							)}
 						</SubMenu>
 					</MainSide>
 				</>
@@ -107,7 +182,6 @@ const HeaderComponent = () => {
 
 export default HeaderComponent;
 
-
 const MainSide = styled.div`
 	width: 100%;
 	background: rgba(0%, 0%, 0%, 0.5);
@@ -115,7 +189,6 @@ const MainSide = styled.div`
 	height: 100vh;
 	position: fixed;
 	top: 0;
-
 `;
 
 // const SubUser = styled.div`
@@ -143,7 +216,7 @@ const SubMenu = styled.div`
 	display: none;
 	z-index: 1000;
 
-	button{
+	button {
 		margin-left: 20px;
 		height: 35px;
 		width: 120px;
@@ -155,9 +228,9 @@ const SubMenu = styled.div`
 		cursor: pointer;
 		font-size: 15px;
 		margin-top: 30px;
-	
+
 		:hover {
-			background-color: #1976D2;
+			background-color: #1976d2;
 			color: white;
 			transform-origin: center left;
 			transition: all 350ms cubic-bezier(0.34, 0.44, 0.96, 0.47) 0s;
@@ -165,7 +238,6 @@ const SubMenu = styled.div`
 			opacity: 0.8;
 		}
 	}
-	
 
 	@media screen and (max-width: 786px) {
 		width: 250px;
@@ -249,7 +321,6 @@ const Container = styled.div`
 	justify-content: space-between;
 	position: fixed;
 	z-index: 2;
-
 
 	@media screen and (max-width: 768px) {
 		display: flex;
